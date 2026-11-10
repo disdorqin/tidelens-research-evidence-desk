@@ -10,7 +10,7 @@ Python 3.11+; no JavaScript build tools, paid accounts, authentication, cloud in
 
     python -m http.server 8765 --bind 127.0.0.1 --directory web
 
-Open http://127.0.0.1:8765/ . Filter papers by topic (agents, forecasting, evaluation), search papers, inspect original arXiv links, check exact source quotes and compare source-checked AI examples. Mobile layout is supported. Everything runs locally without sign-ups or external user analytics.
+Open http://127.0.0.1:8765/ . **Ask an actual research question** to get up to three explainable title/quote/topic term matches, including explicit unmatched terms and no-result behavior. This is deterministic local lexical retrieval, not semantic evidence entailment. Filter papers by topic (agents, forecasting, evaluation), search papers, inspect original arXiv links, check exact source quotes and compare source-checked AI examples. Mobile layout is supported. Everything runs locally without sign-ups or external user analytics.
 
 Rebuild the snapshot from the **real** public arXiv Atom API:
 
@@ -37,7 +37,9 @@ Full author abstracts used during parsing are only stored under an ignored .stat
 ## Reproduce the checks
 
     python -m unittest discover -s tests -v
+    node --check web/research-ranking.js
     node --check web/research.js
+    node --test tests/test_ranker.cjs
 
 Offline tests reject unsafe arXiv hosts, XML DTD/ENTITY payloads, invalid IDs, fake model quotations and accidental full-abstract publication. Tests also exercise the optional model adapter using a **synthetic offline response**; that test is not a claim that a real provider was called. The original project’s real-model canary was separately recorded during development, and the included snapshot contains only responses that passed source quote validation.
 
@@ -46,6 +48,7 @@ Offline tests reject unsafe arXiv hosts, XML DTD/ENTITY payloads, invalid IDs, f
     web/
       index.html             Interactive evidence browser
       research.js            Filter, inspect, exact-quote test; safe text rendering
+      research-ranking.js    Explainable local question-to-paper ranking
       research.css           Responsive layout
       research-data.json     Bounded real-world public arXiv snapshot
     tidelens/
@@ -56,12 +59,13 @@ Offline tests reject unsafe arXiv hosts, XML DTD/ENTITY payloads, invalid IDs, f
       __main__.py            Offline-friendly CLI for snapshot regeneration
     tests/
       test_research.py       Provenance, security, and output-boundary tests
+      test_ranker.cjs        8 independent ranking behavior tests
 
 The CLI runs only local file writes and public data reads. No account registration, benefit claiming, payment, email sending, cookies, personal data collection or unattended browser automation exists in this contest edition.
 
 ## Authorship, AI and previous components
 
-This **Scientific Research product and its evidence-oriented UI** were first implemented on **November 10, 2026**, during the STEM2Connect hackathon period (October 11–November 21, 2026). It was adapted from an existing private technical-intelligence project, TideLens, which already had reusable public-feed handling and a free-model adapter. We **do not** claim those existing generic components were invented solely for this event.
+This **Scientific Research product and its evidence-oriented UI and lexical research-question retrieval** were first implemented on **November 10, 2026**, during the STEM2Connect hackathon period (October 11–November 21, 2026). It was adapted from an existing private technical-intelligence project, TideLens, which already had reusable public-feed handling and a free-model adapter. We **do not** claim those existing generic components were invented solely for this event.
 
 AI coding assistance: ChatGPT / GPT-6 contributed design options, implementation drafts, tests, UI copy and debugging. The developer reviewed the integration, executed the tests and browser checks through an authorized cloud computer, and retained observable evidence about model successes and failures. AI summaries are clearly marked, never treated as independently verified research results. Public arXiv papers remain the authors’ work; titles, authors and URLs are attributed to arXiv and their originals. No scientific results from those papers are reproduced or represented as confirmed.
 

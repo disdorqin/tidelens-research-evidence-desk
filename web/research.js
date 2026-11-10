@@ -126,6 +126,57 @@ function topicFilter(tag){
  });
  drawPapers();
 }
+
+/* Question-guided research shortlist — lexical only, with explicit coverage. */
+function answerResearchQuestion(){
+ const input=$("question").value.trim();
+ const output=$("question-results");
+ output.replaceChildren();
+ if(!input){$("question-message").textContent="请输入研究问题。";return;}
+ if(!window.TideLensRanking){
+   $("question-message").textContent="检索组件加载失败；请刷新页面。";return;
+ }
+ const report=window.TideLensRanking.rank(input,model.papers,3);
+ if(!report.results.length){
+   $("question-message").textContent="证据不足：当前论文快照没有可匹配的关键词。请改写问题或打开原站查找更多文献。";
+   return;
+ }
+ const warning=report.unmatchedTerms.length
+   ?"（没有找到："+report.unmatchedTerms.join("、")+"）":"";
+ $("question-message").textContent=
+   "找到 "+report.results.length+" 条词汇相关候选；命中词："+
+   report.matchedTerms.join("、")+warning+
+   "。仅基于标题、分类、短引句匹配，未证明论文回答了你的问题。";
+ report.results.forEach((record,i)=>{
+   const surface=make("button","question-result");
+   surface.type="button";
+   const rank=make("span","rank","0"+(i+1)+" / LEXICAL MATCH");
+   const heading=make("strong","",record.title);
+   const reason=make("small","",record.reason+"；命中："+record.matches.join("、"));
+   surface.append(rank,heading,reason);
+   surface.addEventListener("click",()=>{
+     model.search="";
+     $("search").value="";
+     model.topic="all";
+     document.querySelectorAll(".filter").forEach(b=>{
+       const chosen=b.dataset.topic==="all";
+       b.classList.toggle("active",chosen);
+       b.setAttribute("aria-pressed",String(chosen));
+     });
+     model.selected=record.id;
+     drawPapers();
+     $("papertitle").scrollIntoView({behavior:"smooth",block:"center"});
+   });
+   output.append(surface);
+ });
+}
+$("question-form").addEventListener("submit",e=>{e.preventDefault();answerResearchQuestion()});
+document.querySelectorAll("[data-question]").forEach(b=>
+  b.addEventListener("click",()=>{
+    $("question").value=b.dataset.question;
+    answerResearchQuestion();
+  }));
+
 async function load(){
  try{
   const res=await fetch("./research-data.json",{cache:"no-store"});

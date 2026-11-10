@@ -7,6 +7,7 @@
 <meta name="description" content="TideLens Research Evidence Desk — 真实公开论文来源，证据优先的科研发现工作台。">
 <title>Research Evidence Desk — TideLens</title>
 <link rel="stylesheet" href="./research.css">
+<script defer src="./research-ranking.js"></script>
 <script defer src="./research.js"></script>
 </head>
 <body>
@@ -23,6 +24,23 @@
       <p>从 arXiv 的真实公开论文元数据中发现方向，追溯原始摘要、检查引文是否确实出现，并把 AI 输出与科学结论区分开来。</p>
       <div class="heroactions"><button class="action" id="explore" type="button">探索论文与证据 <span aria-hidden="true">↘</span></button><a class="quiet" href="https://arxiv.org/" target="_blank" rel="noopener noreferrer">访问 arXiv 原站 ↗</a></div>
       <div class="disclaimer" role="note"><span aria-hidden="true">ⓘ</span> 公开来源的作者投稿摘要 ≠ 论文全文已经审阅 ≠ 同行评审认证 ≠ 科学结论获得证明。</div>
+    </section>
+    <section class="questiondesk" id="questiondesk" aria-labelledby="research-question-title">
+      <div class="deskcopy"><span class="kicker">QUESTION → EVIDENCE · NEW</span>
+        <h2 id="research-question-title">提出你的研究问题</h2>
+        <p>从当前 12 篇真实论文快照中寻找词汇相关的候选，显示匹配原因和未覆盖关键词。不是网络搜索，也不生成未经来源支持的结论。</p>
+      </div>
+      <form id="question-form" class="question-form">
+        <label for="question">研究问题 / Research question</label>
+        <div class="qinput"><input id="question" type="search" maxlength="240" placeholder="例如：How do agents use memory?" required autocomplete="off"><button type="submit">查找原始证据 ↗</button></div>
+      </form>
+      <div class="qexamples" aria-label="研究问题示例"><span>试试：</span>
+        <button type="button" data-question="How do agents use memory?">Agent memory</button>
+        <button type="button" data-question="How to improve forecasting?">Time-series forecasting</button>
+        <button type="button" data-question="如何提升科研评测的可靠性">Evaluation reliability</button>
+      </div>
+      <div id="question-message" class="question-message" role="status" aria-live="polite">输入研究问题后，会给出可点击的论文候选和匹配依据。</div>
+      <div id="question-results" class="question-results" aria-label="研究问题检索结果"></div>
     </section>
     <section class="metrics" aria-label="本次实际采集证据指标">
       <article><span>公开论文快照</span><strong id="count">—</strong><small>来自 arXiv 原始 Atom API</small></article>

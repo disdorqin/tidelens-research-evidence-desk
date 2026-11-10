@@ -1,0 +1,12 @@
+.state/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+*.sqlite*
+*.db
+*.key
+*.pem
+*.p12
+*session*
+*cookie*

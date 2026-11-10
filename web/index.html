@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1020">
+<meta name="description" content="TideLens Research Evidence Desk — 真实公开论文来源，证据优先的科研发现工作台。">
+<title>Research Evidence Desk — TideLens</title>
+<link rel="stylesheet" href="./research.css">
+<script defer src="./research.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">跳转到正文</a>
+<div class="app">
+  <header class="nav">
+    <a class="logo" href="./index.html"><span class="logoicon">◈</span><span>TideLens <em>／ Research</em></span></a>
+    <div class="navmeta"><span class="source-pill">● PRIMARY-SOURCE SNAPSHOT</span><a href="https://stem2connect-online-hackathon.devpost.com/rules" target="_blank" rel="noopener noreferrer">STEM2Connect · Scientific Research ↗</a></div>
+  </header>
+  <main id="main">
+    <section class="hero">
+      <div class="kicker">SCIENTIFIC RESEARCH / VERIFIED-EVIDENCE WORKFLOW</div>
+      <h1>读到论文标题，<br><span>离可信结论还有多远？</span></h1>
+      <p>从 arXiv 的真实公开论文元数据中发现方向，追溯原始摘要、检查引文是否确实出现，并把 AI 输出与科学结论区分开来。</p>
+      <div class="heroactions"><button class="action" id="explore" type="button">探索论文与证据 <span aria-hidden="true">↘</span></button><a class="quiet" href="https://arxiv.org/" target="_blank" rel="noopener noreferrer">访问 arXiv 原站 ↗</a></div>
+      <div class="disclaimer" role="note"><span aria-hidden="true">ⓘ</span> 公开来源的作者投稿摘要 ≠ 论文全文已经审阅 ≠ 同行评审认证 ≠ 科学结论获得证明。</div>
+    </section>
+    <section class="metrics" aria-label="本次实际采集证据指标">
+      <article><span>公开论文快照</span><strong id="count">—</strong><small>来自 arXiv 原始 Atom API</small></article>
+      <article><span>原文逐字引句</span><strong id="quoted">—</strong><small>与采集摘要进行精确比对</small></article>
+      <article><span>AI 引句复核</span><strong id="aicount">—</strong><small>只有真实模型响应才计入</small></article>
+      <article><span>论文全文已审阅</span><strong>0</strong><small>不把摘要当成阅读整篇论文</small></article>
+    </section>
+    <section class="workbench" id="workbench">
+      <div class="bar"><div><span class="kicker">PUBLIC RESEARCH STREAM</span><h2>研究证据工作台</h2></div><span id="snapshot" class="time">读取快照中…</span></div>
+      <div class="searchrow">
+        <label class="search"><span class="searchicon">⌕</span><input id="search" type="search" placeholder="搜索论文标题、作者、研究方向…" aria-label="搜索论文" autocomplete="off"></label>
+        <label class="sort-label">排序<select id="sort" aria-label="排序"><option value="recent">最近提交</option><option value="name">论文名称</option></select></label>
+      </div>
+      <div class="filters" role="group" aria-label="科研方向">
+        <button class="filter active" data-topic="all" aria-pressed="true">全部论文</button>
+        <button class="filter" data-topic="agents" aria-pressed="false">智能体与记忆</button>
+        <button class="filter" data-topic="forecast" aria-pressed="false">预测与时序</button>
+        <button class="filter" data-topic="evaluation" aria-pressed="false">评测与可信性</button>
+        <button class="filter" data-topic="general" aria-pressed="false">其他研究</button>
+      </div>
+      <div class="board">
+        <div class="papers"><div class="listmeta" id="resultcount" role="status" aria-live="polite">加载中</div><div id="paperlist" class="paperlist" role="list"></div></div>
+        <aside class="inspector" aria-label="证据审核面板">
+          <div class="inspectorhead"><div class="micro">EVIDENCE INSPECTOR</div><span id="paperid" class="paperid">—</span></div>
+          <h3 id="papertitle">请选择一项研究</h3>
+          <div class="byline" id="authors"></div>
+          <div class="verification">
+            <div class="step success"><span class="stepicon">01</span><div><strong>原始公开来源</strong><p id="original-status">等待读取…</p></div></div>
+            <div class="step success"><span class="stepicon">02</span><div><strong>逐字证据核对</strong><p id="match-status">—</p></div></div>
+            <div class="step neutral"><span class="stepicon">03</span><div><strong>模型总结与复核</strong><p id="model-status">—</p></div></div>
+            <div class="step caution"><span class="stepicon">04</span><div><strong>论文全文与科学论断</strong><p>未阅读全文、未独立复现，不能断言结果可靠。</p></div></div>
+          </div>
+          <div class="quotearea"><span class="micro">SOURCE QUOTE · FROM AUTHOR ABSTRACT</span><blockquote id="quote">—</blockquote><div class="hash">SHA-256：<code id="hash">—</code></div></div>
+          <div id="modelblock" class="modelblock" hidden><span class="micro">AI EXTRACTION · QUOTE-CHECKED ONLY</span><p id="modelsummary"></p><small id="modelprovenance"></small></div>
+          <section class="checker" aria-label="交互式引文核验"><label for="claim">试着核对一段文字</label><p>粘贴当前展示的引句中的连续原文。这里只判断**文字是否在公开证据片段中**，不进行科学真伪判断。</p><input id="claim" type="text" maxlength="180" placeholder="粘贴一句需要核查的原文…" autocomplete="off"><button id="verify" type="button">核对可见原文</button><div id="claimresult" class="claimresult" role="status" aria-live="polite">尚未核对。</div></section>
+          <div class="footactions"><a id="original" href="https://arxiv.org/" target="_blank" rel="noopener noreferrer">打开原始论文 ↗</a><button id="copy" type="button">复制论文引用</button></div>
+          <div class="privacy">此页面不读取私人邮箱、账号、学校资料和任何 API Key。没有外部注册、投稿、付费或主动推送操作。</div>
+        </aside>
+      </div>
+    </section>
+    <section class="method"><div><span class="kicker">WHAT WE VERIFY</span><h2>证据等级不能跳级</h2></div><div class="methodgrid">
+      <article><span>01 / DISCOVER</span><strong>发现原始来源</strong><p>直接从 arXiv Atom API 获取论文标题、作者、时间和摘要，不依赖二次转载标题。</p></article>
+      <article><span>02 / TRACE</span><strong>保留可审计的证据</strong><p>归一化官方链接、摘要 SHA-256、20 词以内的原文引句，避免复制整篇论文。</p></article>
+      <article><span>03 / EXPLAIN</span><strong>AI 能力有边界</strong><p>AI 总结只有在真实模型回答的引句与原文逐字匹配时展示。仍不代表其解释一定科学正确。</p></article>
+      <article><span>04 / REPRODUCE</span><strong>可复现实验流程</strong><p>来源接口、解析器、回归测试和失败结果均可核验，展示数据有采集时间，不凭空生成论文。</p></article>
+    </div></section>
+  </main>
+  <footer class="footer"><span>TideLens / Research Evidence Desk</span><span>Scientific Research track · STEM2Connect 2026</span><span><a href="https://github.com/disdorqin/tidelens-research-evidence-desk">View contest source code ↗</a></span></footer>
+</div>
+</body></html>

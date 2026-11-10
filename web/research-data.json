@@ -1,0 +1,398 @@
+{
+  "schema": "tidelens-scientific-research/v1",
+  "snapshot_utc": "2026-11-10T11:37:30+00:00",
+  "source": "arxiv_public_api",
+  "source_url": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&start=0&max_results=12&sortBy=submittedDate&sortOrder=descending",
+  "is_live_source_snapshot": true,
+  "is_user_or_peer_reviewed": false,
+  "disclaimer": "Original author-submitted public abstracts; quoted words checked against the retrieved abstract. No full paper, peer review, scientific truth or user registration is certified.",
+  "papers": [
+    {
+      "id": "2611.12872v1",
+      "title": "HiVe-Mem: Interleaving Horizontal Memory Expansion and Vertical Evidence Composition for Multimodal Agents",
+      "url": "https://arxiv.org/abs/2611.12872v1",
+      "authors": [
+        "Haozhen Zhang",
+        "Bohan Liu",
+        "Jianzhu Bao"
+      ],
+      "author_count_shown": 3,
+      "published_utc": "2026-11-09T18:57:00Z",
+      "updated_utc": "2026-11-09T18:57:00Z",
+      "abstract_sha256": "63dece4d1f2af2ba36ed7fa6b7bf772893594610d0a62926acc75e4ca7f7e1ea",
+      "evidence_quote": "As multimodal agents accumulate increasingly long interaction histories, effectively retrieving and utilizing past information becomes critical for long-term interaction. Existing",
+      "quote_exact_match": true,
+      "topics": [
+        "agents",
+        "evaluation"
+      ],
+      "evidence_level": "author_submitted_arxiv_abstract",
+      "peer_review_confirmed": false,
+      "verification": {
+        "quote_in_original_abstract": true,
+        "abstract_source": "arXiv author-submitted Atom metadata",
+        "full_paper_read": false,
+        "independent_reproduction": false
+      },
+      "ai": {
+        "status": "quote_checked",
+        "summary": "Hivemem is a multimodal memory system that expands memory horizontally via relational graphs and composes evidence vertically with multiple modalities, improving performance and reducing token usage.",
+        "quote": "We introduce \\textbf{\\hivemem}, a multimodal memory framework",
+        "source_quote_verified": true,
+        "provider": "freellmpool-auto"
+      }
+    },
+    {
+      "id": "2611.12865v1",
+      "title": "Shortcuts and Boundaries: Verifiable RL Misalignment and Contextual Safety Learning",
+      "url": "https://arxiv.org/abs/2611.12865v1",
+      "authors": [
+        "Xinjie Shen"
+      ],
+      "author_count_shown": 1,
+      "published_utc": "2026-11-09T18:52:20Z",
+      "updated_utc": "2026-11-09T18:52:20Z",
+      "abstract_sha256": "fcfa20a12de3378e8514d5d38643bd3ac9a76dd08bef044f7528c4e6cfb5136e",
+      "evidence_quote": "Reinforcement learning (RL) can improve an agent's task capability while reinforcing behavior that violates contextual execution requirements. We study this",
+      "quote_exact_match": true,
+      "topics": [
+        "agents"
+      ],
+      "evidence_level": "author_submitted_arxiv_abstract",
+      "peer_review_confirmed": false,
+      "verification": {
+        "quote_in_original_abstract": true,
+        "abstract_source": "arXiv author-submitted Atom metadata",
+        "full_paper_read": false,
+        "independent_reproduction": false
+      },
+      "ai": {
+        "status": "unavailable_or_unverified",
+        "summary": null,
+        "quote": null
+      }
+    },
+    {
+      "id": "2611.12834v1",
+      "title": "Programming Prescience: Issues in Human Construction of Forecasting Bots",
+      "url": "https://arxiv.org/abs/2611.12834v1",
+      "authors": [
+        "Priya Dhawka",
+        "Benjamin Wilson",
+        "Andrew Head"
+      ],
+      "author_count_shown": 3,
+      "published_utc": "2026-11-09T18:33:13Z",
+      "updated_utc": "2026-11-09T18:33:13Z",
+      "abstract_sha256": "c22085989825025f41958a1b5173df6029d8d62292a7eca5f38e6f1d02b432bb",
+      "evidence_quote": "AI models' growing capacity for complex reasoning has made them attractive tools for forecasting, or the systematic prediction of the",
+      "quote_exact_match": true,
+      "topics": [
+        "forecast"
+      ],
+      "evidence_level": "author_submitted_arxiv_abstract",
+      "peer_review_confirmed": false,
+      "verification": {
+        "quote_in_original_abstract": true,
+        "abstract_source": "arXiv author-submitted Atom metadata",
+        "full_paper_read": false,
+        "independent_reproduction": false
+      },
+      "ai": {
+        "status": "not_run",
+        "summary": null,
+        "quote": null
+      }
+    },
+    {
+      "id": "2611.12825v1",
+      "title": "MaxIM: Maximally Informative Incremental Summarization via Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2611.12825v1",
+      "authors": [
+        "Jihwan Jeong",
+        "Guy Tennenholtz",
+        "Yinlam Chow"
+      ],
+      "author_count_shown": 3,
+      "published_utc": "2026-11-09T18:25:42Z",
+      "updated_utc": "2026-11-09T18:25:42Z",
+      "abstract_sha256": "42bfe1e3fa4f95df10050e46a8608a6fd3118b4a1568ab319dc58d1d6e1ceecd",
+      "evidence_quote": "AI systems must often maintain bounded memory of unbounded interaction histories. However, optimizing the memory representation, and its updates, for",
+      "quote_exact_match": true,
+      "topics": [
+        "agents",
+        "evaluation"
+      ],
+      "evidence_level": "author_submitted_arxiv_abstract",
+      "peer_review_confirmed": false,
+      "verification": {
+        "quote_in_original_abstract": true,
+        "abstract_source": "arXiv author-submitted Atom metadata",
+        "full_paper_read": false,
+        "independent_reproduction": false
+      },
+      "ai": {
+        "status": "not_run",
+        "summary": null,
+        "quote": null
+      }
+    },
+    {
+      "id": "2611.12817v1",
+      "title": "LUCQUE: A lung cancer screening dataset from Québec for reliable AI evaluation",
+      "url": "https://arxiv.org/abs/2611.12817v1",
+      "authors": [
+        "Johanna Topalis",
+        "Yannick Lemaréchal",
+        "Gabriel Couture"
+      ],
+      "author_count_shown": 3,
+      "published_utc": "2026-11-09T18:21:18Z",
+      "updated_utc": "2026-11-09T18:21:18Z",
+      "abstract_sha256": "040364834ec4852a74800ae22bb7eacaa2ca04fb6c039f7ce73b6a90cdfde93f",
+      "evidence_quote": "BACKGROUND: AI-based tools are expected to play a key role in lung cancer screening (LCS). The evaluation of these tools",
+      "quote_exact_match": true,
+      "topics": [
+        "evaluation"
+      ],
+      "evidence_level": "author_submitted_arxiv_abstract",
+      "peer_review_confirmed": false,
+      "verification": {
+        "quote_in_original_abstract": true,
+        "abstract_source": "arXiv author-submitted Atom metadata",
+        "full_paper_read": false,
+        "independent_reproduction": false
+      },
+      "ai": {
+        "status": "not_run",
+        "summary": null,
+        "quote": null
+      }
+    },
+    {
+      "id": "2611.12816v1",
+      "title": "Automated Knowledge Acquisition Pipeline for Disassembly Instructions: A Comparison of NLP and Generative AI Frameworks",
+      "url": "https://arxiv.org/abs/2611.12816v1",
+      "authors": [
+        "Tim Schnieders",
+        "Tareq Maximilian Gabriel Ahrari",
+        "Oliver Petrovic"
+      ],
+      "author_count_shown": 3,
+      "published_utc": "2026-11-09T18:19:57Z",
+      "updated_utc": "2026-11-09T18:19:57Z",
+      "abstract_sha256": "2c3aceb00ef971ff95b8f73e2e44455a80f1ce9aa9301d7749f645e1930aca29",
+      "evidence_quote": "The push towards circularity and Re-X principles presents a challenge to SMEs, particularly due to increasing product complexity that impedes",
+      "quote_exact_match": true,
+      "topics": [
+        "general"
+      ],
+      "evidence_level": "author_submitted_arxiv_abstract",
+      "peer_review_confirmed": false,
+      "verification": {
+        "quote_in_original_abstract": true,
+        "abstract_source": "arXiv author-submitted Atom metadata",
+        "full_paper_read": false,
+        "independent_reproduction": false
+      },
+      "ai": {
+        "status": "not_run",
+        "summary": null,
+        "quote": null
+      }
+    },
+    {
+      "id": "2611.12805v1",
+      "title": "2D Gum-Net: Unsupervised Dense Elastic Image Registration via Symmetric Correlation and Spectral Pooling",
+      "url": "https://arxiv.org/abs/2611.12805v1",
+      "authors": [
+        "Aarya Bhave",
+        "Anushka Ajay Bhave"
+      ],
+      "author_count_shown": 2,
+      "published_utc": "2026-11-09T18:11:45Z",
+      "updated_utc": "2026-11-09T18:11:45Z",
+      "abstract_sha256": "7a2f6c0f6ff042e3d5ef0cce6e499d02cdda25c2bee40d4f35db0c00acd7f319",
+      "evidence_quote": "Dense non-rigid registration, the recovery of a pixel-wise deformation field that warps one image into geometric agreement with another, is",
+      "quote_exact_match": true,
+      "topics": [
+        "evaluation"
+      ],
+      "evidence_level": "author_submitted_arxiv_abstract",
+      "peer_review_confirmed": false,
+      "verification": {
+        "quote_in_original_abstract": true,
+        "abstract_source": "arXiv author-submitted Atom metadata",
+        "full_paper_read": false,
+        "independent_reproduction": false
+      },
+      "ai": {
+        "status": "not_run",
+        "summary": null,
+        "quote": null
+      }
+    },
+    {
+      "id": "2611.12799v1",
+      "title": "Agentic-OPD: Recovering Forgotten Agent Capabilities via On-Policy Distillation for Agentic Tasks",
+      "url": "https://arxiv.org/abs/2611.12799v1",
+      "authors": [
+        "Tingcheng Bian",
+        "Kangye Gong",
+        "Jinchang Luo"
+      ],
+      "author_count_shown": 3,
+      "published_utc": "2026-11-09T18:07:42Z",
+      "updated_utc": "2026-11-09T18:07:42Z",
+      "abstract_sha256": "74552e957196c333fd186a0354ea907b88458784f912aa638613d05167c3d2fb",
+      "evidence_quote": "Reinforcement learning is now the mainstream paradigm for training LLMs on agentic tasks, yet standard practice keeps only the best-validation",
+      "quote_exact_match": true,
+      "topics": [
+        "agents",
+        "evaluation"
+      ],
+      "evidence_level": "author_submitted_arxiv_abstract",
+      "peer_review_confirmed": false,
+      "verification": {
+        "quote_in_original_abstract": true,
+        "abstract_source": "arXiv author-submitted Atom metadata",
+        "full_paper_read": false,
+        "independent_reproduction": false
+      },
+      "ai": {
+        "status": "not_run",
+        "summary": null,
+        "quote": null
+      }
+    },
+    {
+      "id": "2611.12775v1",
+      "title": "LogCDM: Interpretable Log Anomaly Detection via Behavioral Graph Drift and Adaptive Signal Fusion",
+      "url": "https://arxiv.org/abs/2611.12775v1",
+      "authors": [
+        "Suryansh Talukdar",
+        "Taha Sarwat",
+        "Jin Soung Yoo"
+      ],
+      "author_count_shown": 3,
+      "published_utc": "2026-11-09T17:48:31Z",
+      "updated_utc": "2026-11-09T17:48:31Z",
+      "abstract_sha256": "149d2072042757c3f677c1916f91944f14000263cb11f0b9786d0cee2a81bad1",
+      "evidence_quote": "Log-based anomaly detection is increasingly dominated by large pretrained models, from BERT-scale encoders to 8B-parameter language models, which require GPUs",
+      "quote_exact_match": true,
+      "topics": [
+        "general"
+      ],
+      "evidence_level": "author_submitted_arxiv_abstract",
+      "peer_review_confirmed": false,
+      "verification": {
+        "quote_in_original_abstract": true,
+        "abstract_source": "arXiv author-submitted Atom metadata",
+        "full_paper_read": false,
+        "independent_reproduction": false
+      },
+      "ai": {
+        "status": "not_run",
+        "summary": null,
+        "quote": null
+      }
+    },
+    {
+      "id": "2611.12763v1",
+      "title": "PORT: Preference Optimization via Robust Token-Level Reweighting",
+      "url": "https://arxiv.org/abs/2611.12763v1",
+      "authors": [
+        "Ding Zhu",
+        "Xiukun Wei",
+        "Tian Xie"
+      ],
+      "author_count_shown": 3,
+      "published_utc": "2026-11-09T17:38:16Z",
+      "updated_utc": "2026-11-09T17:38:16Z",
+      "abstract_sha256": "7eb53816b931a542449fc82d2d47c5d4530a13beaae8f0808b411d20a5a29400",
+      "evidence_quote": "Preference optimization has become a central approach for aligning large language models with human values, but its effectiveness depends heavily",
+      "quote_exact_match": true,
+      "topics": [
+        "general"
+      ],
+      "evidence_level": "author_submitted_arxiv_abstract",
+      "peer_review_confirmed": false,
+      "verification": {
+        "quote_in_original_abstract": true,
+        "abstract_source": "arXiv author-submitted Atom metadata",
+        "full_paper_read": false,
+        "independent_reproduction": false
+      },
+      "ai": {
+        "status": "not_run",
+        "summary": null,
+        "quote": null
+      }
+    },
+    {
+      "id": "2611.12762v1",
+      "title": "Sage-Taiyi: A Metacognitive Architecture for Scientific Discovery",
+      "url": "https://arxiv.org/abs/2611.12762v1",
+      "authors": [
+        "Weida Wang",
+        "Benteng Chen",
+        "Yigeng Jiang"
+      ],
+      "author_count_shown": 3,
+      "published_utc": "2026-11-09T17:38:05Z",
+      "updated_utc": "2026-11-09T17:38:05Z",
+      "abstract_sha256": "02f802c5d0c08c3d54ab23064840b4f76ed86cd917a5d6c5818bd14882b29660",
+      "evidence_quote": "We introduce Sage-Taiyi, a metacognition-inspired architecture that uses accumulated scientific understanding to guide what to investigate next and how to",
+      "quote_exact_match": true,
+      "topics": [
+        "evaluation"
+      ],
+      "evidence_level": "author_submitted_arxiv_abstract",
+      "peer_review_confirmed": false,
+      "verification": {
+        "quote_in_original_abstract": true,
+        "abstract_source": "arXiv author-submitted Atom metadata",
+        "full_paper_read": false,
+        "independent_reproduction": false
+      },
+      "ai": {
+        "status": "not_run",
+        "summary": null,
+        "quote": null
+      }
+    },
+    {
+      "id": "2611.12760v1",
+      "title": "DeepChronos: Temporal Neuro-Symbolic Reasoning for Multi-Step Attack Detection",
+      "url": "https://arxiv.org/abs/2611.12760v1",
+      "authors": [
+        "Sofia Burkow",
+        "Andrea Agiollo",
+        "Enkeleda Bardhi"
+      ],
+      "author_count_shown": 3,
+      "published_utc": "2026-11-09T17:37:36Z",
+      "updated_utc": "2026-11-09T17:37:36Z",
+      "abstract_sha256": "71ccc938d587bd61d26aea349410db87b33d32655ae90dd0b9f2861653094989",
+      "evidence_quote": "Modern cyber threats commonly unfold as multi-step attacks comprising temporally and causally related phases. Current defenses commonly follow a detect",
+      "quote_exact_match": true,
+      "topics": [
+        "forecast",
+        "evaluation"
+      ],
+      "evidence_level": "author_submitted_arxiv_abstract",
+      "peer_review_confirmed": false,
+      "verification": {
+        "quote_in_original_abstract": true,
+        "abstract_source": "arXiv author-submitted Atom metadata",
+        "full_paper_read": false,
+        "independent_reproduction": false
+      },
+      "ai": {
+        "status": "not_run",
+        "summary": null,
+        "quote": null
+      }
+    }
+  ]
+}

@@ -4,6 +4,14 @@
 
 A working, research-focused interface that helps students **distinguish a discoverable research paper, a quote actually present in an author's abstract, an AI-generated explanation, and a scientific claim that has been independently verified.** These four things are not equivalent.
 
+## Live demo and evidence-backed walkthrough
+
+- [Open the working public site](https://disdorqin.cn/tidelens-research-evidence-desk/)
+- [Watch the 2:06 English-narrated browser walkthrough (MP4 preview)](https://disdorqin.cn/tidelens-research-evidence-desk/STEM2Connect_Research_Evidence_Desk_Demo_Draft.mp4)
+- [Official event rules](https://stem2connect-online-hackathon.devpost.com/rules)
+
+The draft video is made from actual interactive browser states and recorded testing actions, annotated with English narration. **It is not yet a YouTube/Vimeo submission**; an eligible Devpost entry still requires the final video to be hosted on YouTube or Vimeo and submitted with the public repository URL.
+
 ## Try it
 
 Python 3.11+; no JavaScript build tools, paid accounts, authentication, cloud instance or API keys are required for the included public research snapshot.
